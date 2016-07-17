@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<title> todo List </title>
+	
+	
+	<script	  src="https://code.jquery.com/jquery-1.12.4.js"
+			  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+			  crossorigin="anonymous"></script>
+	<script src="./assets/todo-list.js"></script> 
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./assets/MOD.js"></script>
+	
+	<link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+	</head>	
+	<body>
+	
+		<div id= "todo-table">
+			<form>
+					<div>
+						<button type="button" id="switchButton" > :-) <%= times%></button>	
+					</div>
+			
+			
+					<div>
+						<button type="button" id="switchSadButton" > :( <%= timesS%></button>	
+					</div>
+			
+					
+					<div>
+						<button type="button" id="switchQButton" >  ? <%= timesQ%></button>	
+					</div>
+					
+			</form>	
+			
+						
+			<form>
+				<input type="text" name="item" placeholder="NEUES TIEM..." required/>
+				<button type="submit"> Hinweis</button>
+			</form>
+			<ul>
+				<% for(var i=0; i < todos.length; i++){ %>
+					<li><%= todos[i].item %></li>
+				<% } %>
+			</ul>
+		
+					
+		</div>
+	</body>
+	
+</html>
